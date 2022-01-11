@@ -163,7 +163,7 @@
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="60dp"
         android:layout_margin="20dp"
         android:backgroundTint="#0AB51C"
         app:layout_constraintTop_toBottomOf="@id/linear2"
