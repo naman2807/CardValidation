@@ -6,4 +6,5 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="submit_payment">SUBMIT PAYMENT</string>
+    <string name="check_card">Check Card Number</string>
 </resources>
