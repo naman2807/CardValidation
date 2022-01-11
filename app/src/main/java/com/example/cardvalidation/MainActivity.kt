@@ -132,6 +132,15 @@ class MainActivity : AppCompatActivity() {
         return sum
     }
 
+    private fun validateCardType(cardNumber: String): Boolean{
+        val visa = "^4\\d{16}".toRegex()
+        val masterCard = "^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[0-1]|2720)\\d{16}".toRegex()
+        val americanExpress = "^3[47]\\d{15}".toRegex()
+        val discover = "^(6011|65|64[4-9]|622)\\d{16,19}".toRegex()
+        return cardNumber.matches(visa) || cardNumber.matches(masterCard) ||
+                cardNumber.matches(americanExpress) || cardNumber.matches(discover)
+    }
+
     private fun clearData(){
         with(binding) {
             cardInputLayout.setText("")
