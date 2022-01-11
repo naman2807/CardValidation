@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:errorIconDrawable="@drawable/error_icon"
+        app:boxCornerRadiusTopEnd="3dp"
+        app:boxCornerRadiusBottomStart="3dp"
+        app:boxCornerRadiusTopStart="3dp"
+        app:boxCornerRadiusBottomEnd="3dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/card_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/card_input_layout"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/card_layout"
+        android:layout_marginTop="20dp"
+        android:baselineAligned="false">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:errorIconDrawable="@drawable/error_icon"
+            app:boxCornerRadiusTopEnd="3dp"
+            app:boxCornerRadiusBottomStart="3dp"
+            app:boxCornerRadiusTopStart="3dp"
+            app:boxCornerRadiusBottomEnd="3dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/mm_yy">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_input_layout"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="50dp"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cvv_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:errorIconDrawable="@drawable/error_icon"
+            app:boxCornerRadiusTopEnd="3dp"
+            app:boxCornerRadiusBottomStart="3dp"
+            app:boxCornerRadiusTopStart="3dp"
+            app:boxCornerRadiusBottomEnd="3dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/security_code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv_input_layout"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="50dp"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        android:layout_marginTop="20dp"
+        android:baselineAligned="false">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:errorIconDrawable="@drawable/error_icon"
+            app:boxCornerRadiusTopEnd="3dp"
+            app:boxCornerRadiusBottomStart="3dp"
+            app:boxCornerRadiusTopStart="3dp"
+            app:boxCornerRadiusBottomEnd="3dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/first_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/first_input_layout"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="50dp"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:errorIconDrawable="@drawable/error_icon"
+            app:boxCornerRadiusTopEnd="3dp"
+            app:boxCornerRadiusBottomStart="3dp"
+            app:boxCornerRadiusTopStart="3dp"
+            app:boxCornerRadiusBottomEnd="3dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/last_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_input_layout"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="50dp"
+                android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="#0AB51C"
+        app:layout_constraintTop_toBottomOf="@id/linear2"
+        android:text="@string/submit_payment"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

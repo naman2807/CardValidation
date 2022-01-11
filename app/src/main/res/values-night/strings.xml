@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card_number">Card Number</string>
+    <string name="mm_yy">MM/YY</string>
+    <string name="security_code">Security Code</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="submit_payment">SUBMIT PAYMENT</string>
+</resources>
