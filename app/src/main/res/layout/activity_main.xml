@@ -63,7 +63,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/date_input_layout"
                 android:layout_width="match_parent"
-                android:inputType="text"
+                android:inputType="number"
                 android:layout_height="50dp"
                 android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +90,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cvv_input_layout"
                 android:layout_width="match_parent"
-                android:inputType="text"
+                android:inputType="number"
                 android:layout_height="50dp"
                 android:maxLines="1"/>
         </com.google.android.material.textfield.TextInputLayout>

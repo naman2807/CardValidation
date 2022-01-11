@@ -2,6 +2,7 @@ package com.example.cardvalidation
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cardvalidation.databinding.ActivityMainBinding
 
@@ -18,8 +19,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.submit.setOnClickListener {
-            checkEmptyFields()
-            showAlert()
+            if (!checkEmptyFields()){
+               if (submit()){
+                   showAlert()
+               }
+            }else{
+                Toast.makeText(this, "Some Fields have problem", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -29,6 +35,23 @@ class MainActivity : AppCompatActivity() {
         securityCode = binding.cvvInputLayout.text.toString()
         firstName = binding.firstInputLayout.text.toString()
         lastName = binding.lastInputLayout.text.toString()
+    }
+
+    private fun submit(): Boolean{
+        var submit = true
+        if (!validateLuhn(cardNumber)){
+            binding.cardLayout.error = "Check Card Number"
+            submit = false
+        }
+        if (!isCharacters(firstName)) {
+            binding.firstLayout.error = "First name error"
+            submit = false
+        }
+        if (!isCharacters(lastName)){
+            binding.lastLayout.error = "Last Name error"
+            submit = false
+        }
+        return submit
     }
 
     private fun checkEmptyFields(): Boolean {
@@ -64,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         builder.setMessage("Payment Successful")
         builder.setIcon(android.R.drawable.ic_dialog_alert)
         builder.setPositiveButton("OK") { dialogInterface, which ->
+            clearData()
         }
         val alertDialog: AlertDialog = builder.create()
         alertDialog.setCancelable(false)
@@ -82,7 +106,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getOddSum(numbers: IntArray): Int {
         var sum = 0
-        for (i in 0..numbers.size - 1) {
+        for (i in numbers.indices) {
             if (i % 2 == 1) {
                 sum += numbers[i]
             }
@@ -92,12 +116,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun getEvenSum(numbers: IntArray): Int {
         var sum = 0
-        for (i in 0..numbers.size - 1) {
+        for (i in numbers.indices) {
             if (i % 2 == 0) {
                 val digit = numbers[i] * 2
                 if (digit > 9) {
                     val digits = digit.toString().map { it.toString().toInt() }.toIntArray()
-                    for (j in 0..digits.size - 1) {
+                    for (j in digits.indices) {
                         sum += digits[j]
                     }
                 } else {
@@ -106,5 +130,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return sum
+    }
+
+    private fun clearData(){
+        with(binding) {
+            cardInputLayout.setText("")
+            dateInputLayout.setText("")
+            cvvInputLayout.setText("")
+            firstInputLayout.setText("")
+            lastInputLayout.setText("")
+        }
     }
 }
