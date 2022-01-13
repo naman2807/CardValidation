@@ -3,11 +3,13 @@ package com.example.cardvalidation
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.withStyledAttributes
 import androidx.core.widget.addTextChangedListener
 import com.example.cardvalidation.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
