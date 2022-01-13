@@ -14,4 +14,4 @@ If any of the entered data was invalid, the user needed to be notified so they c
 3. The CVV had to meet these criteria: CVV criteria
 4. First and last names could only contain characters that were "alphabetical and spaces"
 
-Link to download apk file: [Card Validation](https://drive.google.com/file/d/1rv3q6HG2YtCxTlQIFQKqHyL_NvrqaNDA/view?usp=drivesdk)
+Link to download apk file: [Card Validation](https://drive.google.com/file/d/1s1yhR1xGldcNV1hBvE4OR85JZRezASFu/view?usp=drivesdk)
