@@ -18,5 +18,5 @@ class ExpiryDate() {
 
     private fun getCurrentMonth():String = (calendar.get(Calendar.MONTH) + 1).toString()
 
-    fun validateExpiryDate(year: String, month: String): Boolean = getCurrentYear().equals(year) && getCurrentMonth().equals(month)
+    fun validateExpiryDate(year: String, month: String): Boolean = getCurrentYear().toInt() <= year.toInt() && getCurrentMonth().toInt() <= month.toInt()
 }

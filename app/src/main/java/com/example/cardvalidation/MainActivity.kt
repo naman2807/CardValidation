@@ -69,6 +69,11 @@ class MainActivity : AppCompatActivity() {
                 binding.cvvLayout.error = "Security Code error"
                 submit = false
             }
+
+            if (!ExpiryDate().validateExpiryDate(getExpiryYear(), getExpiryMonth())){
+                binding.dateLayout.error = "Expiry Date error"
+                submit = false
+            }
         }
 
         return submit
@@ -199,4 +204,7 @@ class MainActivity : AppCompatActivity() {
             lastLayout.error = null
         }
     }
+
+    private fun getExpiryMonth():String = dateMonth.split("/")[0]
+    private fun getExpiryYear(): String = dateMonth.split("/")[1]
 }
